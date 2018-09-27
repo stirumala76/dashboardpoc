@@ -1,0 +1,41 @@
+<nb-layout>
+    <nb-layout-header fixed>
+        
+      <img src="assets/images/nygov-logo.png" class="topbar-logo"> &nbsp;
+        <h1 class="topbar-logo" >IMS&nbsp;Dashboard</h1>
+        <span class="fa-stack fa-lg" (click)="toggle()" [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+          <i class="fa fa-angle-right fa-stack-2x text-danger"></i>
+        </span> 
+    </nb-layout-header>
+    <nb-sidebar responsive="true">
+      
+      <nb-card>
+        <nb-card-body>
+          <!-- nb-menu does not work 
+          <nb-menu [items]="items"></nb-menu>   
+        -->
+
+
+         <ul >
+              <li>
+                <a [routerLink]="['/dashboard']">
+                  <i class="fa fa-tachometer"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                  <a [routerLink]="['/admin']">
+                    <i class="fa fa-adn"></i>
+                    <span>Admin</span>
+                  </a>
+                </li>
+           </ul>  
+        </nb-card-body>
+        </nb-card>
+ 
+
+    </nb-sidebar>
+    <nb-layout-column>
+      <router-outlet></router-outlet>
+    </nb-layout-column>
+  </nb-layout>
